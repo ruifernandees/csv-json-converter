@@ -1,0 +1,17 @@
+{
+    "name": "ruifernandes/csv-json-converter",
+    "description": "A modern PHP CSV to JSON converter",
+    "authors": [
+        {
+            "name": "ruifernandees",
+            "email": "dev.ruifernandes@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "RuiF\\CsvToJson\\": "src"
+        }
+    }
+}
