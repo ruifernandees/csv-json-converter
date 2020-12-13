@@ -1,6 +1,6 @@
 {
     "name": "ruifernandees/csv-json-converter",
-    "description": "A modern PHP CSV to JSON converter",
+    "description": "A modern PHP CSV to JSON and JSON to CSV converter",
     "license": "MIT",
     "authors": [
         {
