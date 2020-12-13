@@ -2,16 +2,11 @@
     {
         "name": "Rui",
         "age": "18",
-        "city": "Vancouver"
+        "city": "Maceió"
     },
     {
         "name": "José",
         "age": "25",
-        "city": "Toronto"
-    },
-    {
-        "name": "João",
-        "age": "40",
         "city": "São Paulo"
     }
 ]
