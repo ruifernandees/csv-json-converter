@@ -16,7 +16,7 @@ class Csv
         return $this->rawCsv;
     }
 
-    public function toJson(string $dataName)
+    public function toJson()
     {
         $newArray = [];
         foreach ($this->rawCsv as $item) {
@@ -33,6 +33,6 @@ class Csv
             }
         }
 
-        return json_encode([ $dataName => $finalArray ]);
+        return json_encode($finalArray);
     }
 }

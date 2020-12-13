@@ -9,9 +9,9 @@ $file = __DIR__ . "/users.csv";
 if (file_exists($file)) {
 
     $csv = new Csv(file($file));
-    echo $csv->toJson("users");
+    echo $csv->toJson();
 
 
 } else {
-    echo "Não existe";
+    echo "The file doesn't exists";
 }
