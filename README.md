@@ -142,3 +142,9 @@ José,25,São Paulo
         <th>São Paulo</th>
     </tr>
 </table>
+
+## Credits
+- [Rui Fernandes](https://github.com/ruifernandees)
+
+## License
+The MIT License (MIT). Please see [License File](https://github.com/ruifernandees/csv-json-converter/blob/main/LICENSE) for more information
