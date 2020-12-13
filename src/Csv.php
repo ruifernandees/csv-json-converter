@@ -5,6 +5,7 @@ namespace RuiF\CsvToJson;
 class Csv
 {
     private $rawCsv;
+    public $json;
 
     public function __construct(array $rawCsv)
     {
@@ -33,6 +34,8 @@ class Csv
             }
         }
 
-        return json_encode($finalArray);
+        $this->json = json_encode($finalArray);
+
+        return $this;
     }
 }

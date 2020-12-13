@@ -9,7 +9,8 @@ $file = __DIR__ . "/users.csv";
 if (file_exists($file)) {
 
     $csv = new Csv(file($file));
-    echo $csv->toJson();
+    $csv->toJson();
+    echo $csv->json;
 
 
 } else {
