@@ -2,22 +2,38 @@
 
 namespace RuiF\CsvToJson;
 
+/**
+ * Class Json
+ * @package RuiF\CsvToJson
+ */
 class Json
 {
+    /** @var array */
     private $rawJson;
+
+    /** @var string */
     public $csv;
 
+    /**
+     * @param array $json
+     */
     public function __construct(array $json)
     {
         $this->rawJson = $json;
     }
 
-    public function rawJson()
+    /**
+     * @return array
+     */
+    public function rawJson(): array
     {
         return $this->rawJson;
     }
 
-    public function toCsv()
+    /**
+     * @return Json
+     */
+    public function toCsv(): Json
     {
         $keys = array_keys($this->rawJson[0]);
         $firstLine = implode(",", $keys);
