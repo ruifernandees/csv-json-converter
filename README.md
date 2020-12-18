@@ -21,7 +21,8 @@ $file = __DIR__ . "/users.csv";
 if (file_exists($file)) {
 
     $csv = new Csv(file($file));
-    $csv->toJson();
+    $csvKeysLine = 0;
+    $csv->toJson($csvKeysLine);
     echo $csv->json;
 
 
