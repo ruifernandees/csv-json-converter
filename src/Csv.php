@@ -40,15 +40,27 @@ class Csv
      * $transformToAssoc transforms the $newArray into the final array, with the CSV keys associated with its respective values
      * 
      * @param integer $csvKeysLine
+     * @param integer $limitOfLines
      * @return Csv
      */
-    public function toJson(int $csvKeysLine): Csv
+    public function toJson(int $csvKeysLine, int $limitOfLines = -1): Csv
     {
-        $newArray = array_map(function ($item) {
-            $stringWithoutLineBreak = str_replace("\n", "", $item);
-            return explode(",", $stringWithoutLineBreak);
-        }, $this->rawCsv);
-        
+        if ($limitOfLines == -1) {
+            $limitOfLines = count($this->rawCsv);
+        }
+
+        $newArray = [];
+        foreach ($this->rawCsv as $index => $item) {
+            if ($index == ($csvKeysLine + $limitOfLines)) {
+                break;
+            }
+
+            if ($index >= $csvKeysLine - 1) {
+                $stringWithoutLineBreak = str_replace("\n", "", $item);
+                $newArray[] = explode(",", $stringWithoutLineBreak);
+            }
+        }
+
         $transformToAssoc = function (
             $arrayToBeTransformed, 
             $csvValuesIterator, 
@@ -73,7 +85,7 @@ class Csv
             return $transformToAssoc($arrayToBeTransformed, $csvValuesIterator + 1, $finalArray, $csvKeysLine);
         };
 
-        $finalArray = $transformToAssoc($newArray, $csvKeysLine + 1, [], $csvKeysLine);
+        $finalArray = $transformToAssoc($newArray, 1, [], 0);
 
         $this->json = json_encode($finalArray);
 
