@@ -1,6 +1,6 @@
 # 🔁 CSV/JSON Converter
 See the README in:
-- [Português](https://github.com/ruifernandees/csv-json-converter/blob/main/README.pt-br.md)
+- [Português (Brasil)](https://github.com/ruifernandees/csv-json-converter/blob/main/README.pt-br.md)
 
 ## 📄 Description
 <p>CSV/JSON Converter is a modern PHP component which abstracts the CSV to JSON and JSON to CSV conversion routine.</p>
