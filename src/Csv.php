@@ -2,22 +2,47 @@
 
 namespace RuiF\CsvToJson;
 
+/**
+ * Class Csv
+ * @package RuiF\CsvToJson
+ */
 class Csv
 {
+    /** @var array */
     private $rawCsv;
+
+    /** @var string */
     public $json;
 
+    /**
+     * Csv constructor
+     *
+     * @param array $rawCsv
+     */
     public function __construct(array $rawCsv)
     {
         $this->rawCsv = $rawCsv;    
     }
 
-    public function rawCsv()
+    /**
+     * @return array
+     */
+    public function rawCsv(): array
     {
         return $this->rawCsv;
     }
 
-    public function toJson(int $csvKeysLine)
+    /**
+     * Step by step:
+     * 
+     * $newArray is a bidimensional array that has arrays with the values of each CSV line
+     * 
+     * $transformToAssoc transforms the $newArray into the final array, with the CSV keys associated with its respective values
+     * 
+     * @param integer $csvKeysLine
+     * @return Csv
+     */
+    public function toJson(int $csvKeysLine): Csv
     {
         $newArray = array_map(function ($item) {
             $stringWithoutLineBreak = str_replace("\n", "", $item);
