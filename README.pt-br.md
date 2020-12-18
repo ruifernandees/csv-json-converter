@@ -1,15 +1,12 @@
 # 🔁 CSV/JSON Converter
-See the README in:
-- [Português](https://github.com/ruifernandees/csv-json-converter/blob/main/README.pt-br.md)
+## 📄 Descrição
+<p>CSV/JSON Converter é um componente PHP moderno que abstrai a rotina de converter CSV para JSON e JSON para CSV.</p>
 
-## 📄 Description
-<p>CSV/JSON Converter is a modern PHP component which abstracts the CSV to JSON and JSON to CSV conversion routine.</p>
-
-## 💻 Usage
+## 💻 Uso
 ### CSV -> JSON
-<p>This example is in examples/csvToJson.php</p>
+<p>Este exemplo está em examples/csvToJson.php</p>
 
-Code:
+Código:
 ```php
 <?php
 
@@ -26,11 +23,11 @@ if (file_exists($filePath)) {
 
     echo $json;
 } else {
-    echo "The file doesn't exists";
+    echo "O arquivo não existe";
 }
 ```
 
-Input file (users.csv):
+Arquivo de entrada (users.csv):
 ```csv
 name,age,city
 Rui,18,Maceió
@@ -54,7 +51,7 @@ José,25,São Paulo
     </tr>
 </table>
 
-Output: 
+Saída: 
 ```json
 [
     {
@@ -70,7 +67,7 @@ Output:
 ]
 ```
 
-<p>You can save the JSON file with the following code:</p>
+<p>Você pode salvar o arquivo JSON com o seguinte código:</p>
 
 ```php
 $jsonFile = __DIR__ . "/users.json";
@@ -80,9 +77,9 @@ fwrite($fileOpen, $json);
 ```
 
 ### JSON -> CSV
-<p>This example is in examples/jsonToCsv.php</p>
+<p>Este exemplo está em examples/jsonToCsv.php</p>
 
-Code:
+Código:
 ```php
 <?php
 
@@ -96,13 +93,13 @@ if (file_exists($filePath)) {
     $fileFacade = new FileFacade();
     $csv = $fileFacade->convertJsonToCsv($filePath);
     
-    echo "Result:\n{$csv}";
+    echo "Resultado:\n{$csv}";
 } else {
-    echo "The file doesn't exists";
+    echo "O arquivo não existe";
 }
 ```
 
-Input file (users.json):
+Arquivo de entrada (users.json):
 ```json
 [
     {
@@ -118,7 +115,7 @@ Input file (users.json):
 ]
 ```
 
-Output:
+Saída:
 ```csv
 name,age,city
 Rui,18,Maceió
@@ -143,7 +140,7 @@ José,25,São Paulo
     </tr>
 </table>
 
-<p>You can save the CSV file with the following code:</p>
+<p>Você pode salvar o arquivo CSV com o seguinte código:</p>
 
 ```php
 $csvFile = __DIR__ . "/users.csv";
@@ -152,8 +149,8 @@ $fileOpen = fopen($csvFile, "w");
 fwrite($fileOpen, $csv);
 ```
 
-## Credits
+## Créditos
 - [Rui Fernandes](https://github.com/ruifernandees)
 
-## License
+## Licença
 The MIT License (MIT). Please see [License File](https://github.com/ruifernandees/csv-json-converter/blob/main/LICENSE) for more information
