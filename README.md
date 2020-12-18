@@ -14,18 +14,16 @@ Code / Código:
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use RuiF\CsvToJson\Csv;
+use RuiF\CsvToJson\FileFacade;
 
-$file = __DIR__ . "/users.csv";
+$filePath = __DIR__ . "/users.csv";
 
-if (file_exists($file)) {
-
-    $csv = new Csv(file($file));
+if (file_exists($filePath)) {
+    $fileFacade = new FileFacade();
     $csvKeysLine = 0;
-    $csv->toJson($csvKeysLine);
-    echo $csv->json;
+    $json = $fileFacade->convertCsvToJson($filePath, $csvKeysLine);
 
-
+    echo $json;
 } else {
     echo "The file doesn't exists";
 }
@@ -71,6 +69,14 @@ Output / Saída:
 ]
 ```
 
+You can save the JSON file with the following code:
+```php
+$jsonFile = __DIR__ . "/users.json";
+
+$fileOpen = fopen($jsonFile, "w");
+fwrite($fileOpen, $json);
+```
+
 ### JSON -> CSV
 <p><b>English</b>: This example is in examples/jsonToCsv.php</p>
 <p><b>Português</b>: Este exemplo está em examples/jsonToCsv.php</p>
@@ -81,23 +87,15 @@ Code / Código:
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use RuiF\CsvToJson\Json;
+use RuiF\CsvToJson\FileFacade;
 
-$file =  __DIR__ . '/users.json';
+$filePath =  __DIR__ . '/users.json';
 
-if (file_exists($file)) {
-    $fileAsString = file_get_contents($file);
-    $jsonFile = json_decode($fileAsString, true);
-    $json = new Json($jsonFile);
+if (file_exists($filePath)) {
+    $fileFacade = new FileFacade();
+    $csv = $fileFacade->convertJsonToCsv($filePath);
     
-    $json->toCsv();
-    
-    $csvFile = __DIR__ . "/users.csv";
-
-    $fileOpen = fopen($csvFile, "w");
-    fwrite($fileOpen, $json->csv);
-
-    echo "Result:\n{$json->csv}";
+    echo "Result:\n{$csv}";
 } else {
     echo "The file doesn't exists";
 }
@@ -143,6 +141,14 @@ José,25,São Paulo
         <th>São Paulo</th>
     </tr>
 </table>
+
+You can save the CSV file with the folowing code:
+```php
+$csvFile = __DIR__ . "/users.csv";
+
+$fileOpen = fopen($csvFile, "w");
+fwrite($fileOpen, $csv);
+```
 
 ## Credits
 - [Rui Fernandes](https://github.com/ruifernandees)

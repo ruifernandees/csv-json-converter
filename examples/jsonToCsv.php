@@ -2,23 +2,15 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use RuiF\CsvToJson\Json;
+use RuiF\CsvToJson\FileFacade;
 
-$file =  __DIR__ . '/users.json';
+$filePath =  __DIR__ . '/users.json';
 
-if (file_exists($file)) {
-    $fileAsString = file_get_contents($file);
-    $jsonFile = json_decode($fileAsString, true);
-    $json = new Json($jsonFile);
+if (file_exists($filePath)) {
+    $fileFacade = new FileFacade();
+    $csv = $fileFacade->convertJsonToCsv($filePath);
     
-    $json->toCsv();
-    
-    $csvFile = __DIR__ . "/users.csv";
-
-    $fileOpen = fopen($csvFile, "w");
-    fwrite($fileOpen, $json->csv);
-
-    echo "Result:\n{$json->csv}";
+    echo "Result:\n{$csv}";
 } else {
     echo "The file doesn't exists";
 }
