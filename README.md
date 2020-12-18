@@ -1,12 +1,18 @@
 # 🔁 CSV/JSON Converter
-## 📄 Description / Descrição
-<p><b>English</b>: CSV/JSON Converter is a modern PHP component which abstracts the CSV to JSON and JSON to CSV conversion routine.</p>
-<p><b>Português</b>: CSV/JSON Converter é um componente PHP moderno que abstrai a rotina de converter CSV para JSON e JSON para CSV.</p>
+## 📄 Description
+> English
+<p>CSV/JSON Converter is a modern PHP component which abstracts the CSV to JSON and JSON to CSV conversion routine.</p>
 
-## 💻 Usage / Uso
+> Português
+<p>CSV/JSON Converter é um componente PHP moderno que abstrai a rotina de converter CSV para JSON e JSON para CSV.</p>
+
+## 💻 Usage
 ### CSV -> JSON
-<p><b>English</b>: This example is in examples/csvToJson.php</p>
-<p><b>Português</b>: Este exemplo está em examples/csvToJson.php</p>
+> English
+<p>This example is in examples/csvToJson.php</p>
+
+> Português
+<p>Este exemplo está em examples/csvToJson.php</p>
 
 Code / Código:
 ```php
@@ -69,7 +75,12 @@ Output / Saída:
 ]
 ```
 
-You can save the JSON file with the following code:
+> English
+<p>You can save the JSON file with the following code:</p>
+
+> Português
+<p>Você pode salvar o arquivo JSON com o seguinte código:</p>
+
 ```php
 $jsonFile = __DIR__ . "/users.json";
 
@@ -78,8 +89,11 @@ fwrite($fileOpen, $json);
 ```
 
 ### JSON -> CSV
-<p><b>English</b>: This example is in examples/jsonToCsv.php</p>
-<p><b>Português</b>: Este exemplo está em examples/jsonToCsv.php</p>
+> English
+<p>This example is in examples/jsonToCsv.php</p>
+
+> Português
+<p>Este exemplo está em examples/jsonToCsv.php</p>
 
 Code / Código:
 ```php
@@ -142,7 +156,12 @@ José,25,São Paulo
     </tr>
 </table>
 
-You can save the CSV file with the folowing code:
+> English
+<p>You can save the CSV file with the following code:</p>
+
+> Português
+<p>Você pode salvar o arquivo CSV com o seguinte código:</p>
+
 ```php
 $csvFile = __DIR__ . "/users.csv";
 
