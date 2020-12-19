@@ -21,9 +21,28 @@ $filePath = __DIR__ . "/users.csv";
 
 if (file_exists($filePath)) {
     $fileFacade = new FileFacade();
-    $csvKeysLine = 0;
-    $json = $fileFacade->convertCsvToJson($filePath, $csvKeysLine);
 
+    /**
+     * Is the line on the CSV file that the keys are (Like name, age, and city)
+     */
+    $lineOfCsvKeysOnTheFile = 1;
+
+    /**
+     * -1 if you want to get all lines of the CSV file (after the keys). 
+     * If you want to limit, you can pass any number greater than zero
+     * (See the examples below)
+     */
+    $limitOfLines = 1;
+
+    /**
+     * Is the start position after the keys that 
+     * you want to consider when converting: 0 is the first position
+     * (See the examples below)
+     */
+    $offset = 0;
+
+    $json = $fileFacade->convertCsvToJson($filePath, $lineOfCsvKeysOnTheFile, $limitOfLines, $offset);
+    
     echo $json;
 } else {
     echo "The file doesn't exists";
@@ -54,7 +73,29 @@ José,25,São Paulo
     </tr>
 </table>
 
-Output: 
+Output (with limit 1 and offset 0): 
+```json
+[
+    {
+        "name": "Rui",
+        "age": "18",
+        "city": "Maceió"
+    }
+]
+```
+
+Output (with limit 1 and offset 1): 
+```json
+[
+    {
+        "name": "José",
+        "age": "25",
+        "city": "São Paulo"
+    }
+]
+```
+
+Output (with default limit and offset, getting all elements of the CSV file): 
 ```json
 [
     {

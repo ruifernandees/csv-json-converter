@@ -18,9 +18,28 @@ $filePath = __DIR__ . "/users.csv";
 
 if (file_exists($filePath)) {
     $fileFacade = new FileFacade();
-    $csvKeysLine = 0;
-    $json = $fileFacade->convertCsvToJson($filePath, $csvKeysLine);
 
+    /**
+     * É a linha do aquivo CSV na qual as chaves estão (Como nome, idade e cidade)
+     */
+    $lineOfCsvKeysOnTheFile = 1;
+
+    /**
+     * -1 Se você quer que retorne todas as linhas do CSV no JSON. 
+     * Se você quiser limitar, coloque um número maior que zero
+     * (Veja os exemplos abaixo)
+     */
+    $limitOfLines = 1;
+
+    /**
+     * É a posição do elemento que você começar
+     * quando fizer a conversão: 0 é a primeira posição
+     * (Veja os exemplos abaixo)
+     */
+    $offset = 0;
+
+    $json = $fileFacade->convertCsvToJson($filePath, $lineOfCsvKeysOnTheFile, $limitOfLines, $offset);
+    
     echo $json;
 } else {
     echo "O arquivo não existe";
@@ -51,7 +70,29 @@ José,25,São Paulo
     </tr>
 </table>
 
-Saída: 
+Saída (com limit 1 e offset 0): 
+```json
+[
+    {
+        "name": "Rui",
+        "age": "18",
+        "city": "Maceió"
+    }
+]
+```
+
+Saída (com limit 1 e offset 1): 
+```json
+[
+    {
+        "name": "José",
+        "age": "25",
+        "city": "São Paulo"
+    }
+]
+```
+
+Saída (com os valores padrão de limit e offset, de forma a pegar todos os elementos do CSV): 
 ```json
 [
     {
