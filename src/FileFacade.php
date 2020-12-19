@@ -18,7 +18,8 @@ class FileFacade
         string $pathToFile, 
         int $csvKeysLine, 
         int $limitOfLines = -1,
-        int $offset = 0): string {
+        int $offset = 0
+    ): string {
         $csv = new Csv(file($pathToFile));
 
         $csv->toJson($csvKeysLine, $limitOfLines, $offset);

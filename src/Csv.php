@@ -44,8 +44,11 @@ class Csv
      * @param integer $offset is the position after the keys that you want to start the conversion: 0 is the first
      * @return Csv
      */
-    public function toJson(int $csvKeysLine, int $limitOfLines = -1, int $offset = 0): Csv
-    {
+    public function toJson(
+        int $csvKeysLine, 
+        int $limitOfLines = -1, 
+        int $offset = 0
+    ): Csv {
         if ($limitOfLines == -1) {
             $limitOfLines = count($this->rawCsv);
         }   
