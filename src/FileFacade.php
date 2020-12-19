@@ -14,11 +14,14 @@ class FileFacade
      * @param integer $limitOfLines
      * @return string
      */
-    public function convertCsvToJson(string $pathToFile, int $csvKeysLine, int $limitOfLines = -1): string
-    {
+    public function convertCsvToJson(
+        string $pathToFile, 
+        int $csvKeysLine, 
+        int $limitOfLines = -1,
+        int $offset = 0): string {
         $csv = new Csv(file($pathToFile));
 
-        $csv->toJson($csvKeysLine, $limitOfLines);
+        $csv->toJson($csvKeysLine, $limitOfLines, $offset);
 
         return $csv->json;
     }

@@ -39,23 +39,28 @@ class Csv
      * 
      * $transformToAssoc transforms the $newArray into the final array, with the CSV keys associated with its respective values
      * 
-     * @param integer $csvKeysLine
-     * @param integer $limitOfLines
+     * @param integer $csvKeysLine Is the line on the CSV file that the keys are (Like name, age and city)
+     * @param integer $limitOfLines -1 if you want to get all lines. Other natural number if you want to limit
+     * @param integer $offset is the position after the keys that you want to start the conversion: 0 is the first
      * @return Csv
      */
-    public function toJson(int $csvKeysLine, int $limitOfLines = -1): Csv
+    public function toJson(int $csvKeysLine, int $limitOfLines = -1, int $offset = 0): Csv
     {
         if ($limitOfLines == -1) {
             $limitOfLines = count($this->rawCsv);
-        }
+        }   
+
+        $csvKeysPositionArr = $csvKeysLine - 1;
+
+        $realOffset = ($csvKeysPositionArr + $offset) + 1;
 
         $newArray = [];
         foreach ($this->rawCsv as $index => $item) {
-            if ($index == ($csvKeysLine + $limitOfLines)) {
+            if ($index == ($realOffset + $limitOfLines)) {
                 break;
             }
 
-            if ($index >= $csvKeysLine - 1) {
+            if ($index == $csvKeysPositionArr || $index >= $realOffset) {
                 $stringWithoutLineBreak = str_replace("\n", "", $item);
                 $newArray[] = explode(",", $stringWithoutLineBreak);
             }
