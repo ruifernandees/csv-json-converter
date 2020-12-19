@@ -1,4 +1,4 @@
-# 🔁 CSV/JSON Converter
+# 🔄 CSV/JSON Converter
 ## 📄 Descrição
 <p>CSV/JSON Converter é um componente PHP moderno que abstrai a rotina de converter CSV para JSON e JSON para CSV.</p>
 

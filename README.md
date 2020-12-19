@@ -1,4 +1,4 @@
-# 🔁 CSV/JSON Converter
+# 🔄 CSV/JSON Converter
 You can see the README in:
 - [Português (Brasil)](https://github.com/ruifernandees/csv-json-converter/blob/main/README.pt-br.md)
 
