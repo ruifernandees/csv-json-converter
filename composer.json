@@ -8,11 +8,22 @@
             "email": "dev.ruifernandes@gmail.com"
         }
     ],
+    "scripts": {
+        "test": "./vendor/bin/phpunit __tests__"
+    },
     "minimum-stability": "stable",
     "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
     "autoload": {
         "psr-4": {
             "RuiF\\CsvToJson\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RuiF\\CsvJson\\Tests\\": "__tests__"
         }
     }
 }
