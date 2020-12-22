@@ -1,9 +1,9 @@
 <?php
 
-namespace RuiF\CsvJson\Tests;
+namespace RuiF\CsvJsonTests;
 
 use PHPUnit\Framework\TestCase;
-use RuiF\CsvToJson\Csv;
+use RuiF\CsvJson\Csv;
 
 class CsvTest extends TestCase
 {

@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "RuiF\\CsvToJson\\": "src"
+            "RuiF\\CsvJson\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "RuiF\\CsvJson\\Tests\\": "__tests__"
+            "RuiF\\CsvJsonTests\\": "__tests__"
         }
     }
 }

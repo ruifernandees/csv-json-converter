@@ -1,10 +1,10 @@
 <?php
 
-namespace RuiF\CsvToJson;
+namespace RuiF\CsvJson;
 
 /**
  * Class Csv
- * @package RuiF\CsvToJson
+ * @package RuiF\CsvJson
  */
 class Csv
 {

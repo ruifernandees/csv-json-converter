@@ -1,10 +1,10 @@
 <?php
 
-namespace RuiF\CsvToJson;
+namespace RuiF\CsvJson;
 
 /**
  * Class FileFacade
- * @package RuiF\CsvTojson
+ * @package RuiF\CsvJson
  */
 class FileFacade
 {

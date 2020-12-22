@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use RuiF\CsvToJson\FileFacade;
+use RuiF\CsvJson\FileFacade;
 
 $filePath =  __DIR__ . '/users.json';
 

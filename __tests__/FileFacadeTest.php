@@ -1,8 +1,9 @@
 <?php
 
+namespace RuiF\CsvJsonTests;
+
 use PHPUnit\Framework\TestCase;
-use RuiF\CsvToJson\FileFacade;
-use RuiF\CsvToJson\Json;
+use RuiF\CsvJson\FileFacade;
 
 class FileFacadeTest extends TestCase
 {
