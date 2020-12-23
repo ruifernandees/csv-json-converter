@@ -21,7 +21,7 @@ class Csv
      */
     public function __construct(array $rawCsv)
     {
-        $this->rawCsv = $rawCsv;    
+        $this->rawCsv = $rawCsv;
     }
 
     /**
@@ -34,24 +34,25 @@ class Csv
 
     /**
      * Step by step:
-     * 
+     *
      * $newArray is a bidimensional array that has arrays with the values of each CSV line
-     * 
-     * $transformToAssoc transforms the $newArray into the final array, with the CSV keys associated with its respective values
-     * 
+     *
+     * $transformToAssoc transforms the $newArray into the final array,
+     * with the CSV keys associated with its respective values
+     *
      * @param integer $csvKeysLine Is the line on the CSV file that the keys are (Like name, age and city)
      * @param integer $limitOfLines -1 if you want to get all lines. Other natural number if you want to limit
      * @param integer $offset is the position after the keys that you want to start the conversion: 0 is the first
      * @return Csv
      */
     public function toJson(
-        int $csvKeysLine, 
-        int $limitOfLines = -1, 
+        int $csvKeysLine,
+        int $limitOfLines = -1,
         int $offset = 0
     ): Csv {
         if ($limitOfLines == -1) {
             $limitOfLines = count($this->rawCsv);
-        }   
+        }
 
         $csvKeysPositionArr = $csvKeysLine - 1;
 
@@ -70,24 +71,26 @@ class Csv
         }
 
         $transformToAssoc = function (
-            $arrayToBeTransformed, 
-            $csvValuesIterator, 
-            $finalArray, 
-            $csvKeysLine) use (
-                &$transformToAssoc
-            ) {
+            $arrayToBeTransformed,
+            $csvValuesIterator,
+            $finalArray,
+            $csvKeysLine
+        ) use (
+            &$transformToAssoc
+        ) {
 
             if ($csvValuesIterator == count($arrayToBeTransformed)) {
                 return $finalArray;
             }
 
             $finalArray[$csvValuesIterator - 1] = [];
-            
+
             $csvKeysQuantity = count($arrayToBeTransformed[$csvKeysLine]);
 
             for ($csvKeysIterator = 0; $csvKeysIterator < $csvKeysQuantity; $csvKeysIterator++) {
                 $currentCsvKey = $arrayToBeTransformed[$csvKeysLine][$csvKeysIterator];
-                $finalArray[$csvValuesIterator - 1][$currentCsvKey] = $arrayToBeTransformed[$csvValuesIterator][$csvKeysIterator];
+                $value = $arrayToBeTransformed[$csvValuesIterator][$csvKeysIterator];
+                $finalArray[$csvValuesIterator - 1][$currentCsvKey] = $value;
             }
 
             return $transformToAssoc($arrayToBeTransformed, $csvValuesIterator + 1, $finalArray, $csvKeysLine);

@@ -42,7 +42,7 @@ class Json
         foreach ($this->rawJson as $register) {
             $lines[] = implode(",", $register);
         }
-        
+
         $this->csv = $firstLine . "\n" . implode("\n", $lines);
 
         return $this;

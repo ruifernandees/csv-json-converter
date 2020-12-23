@@ -16,7 +16,7 @@ class JsonTest extends TestCase
         $fileAsString = file_get_contents($pathToFile);
         $jsonFile = json_decode($fileAsString, true);
         $json = new Json($jsonFile);
-        
+
         $json->toCsv();
 
         $expectedCsv = "name,age,city\nRui,18,Maceió\nJosé,25,São Paulo";

@@ -33,7 +33,7 @@ class CsvTest extends TestCase
         ];
 
         $expected = json_encode($expectedArray);
-        
+
         $this->assertEquals(
             $expected,
             $csv->json
@@ -65,7 +65,7 @@ class CsvTest extends TestCase
                 "city" => "São Paulo"
             ]
         ];
-        
+
         $expected = json_encode($expectedArray);
 
         $this->assertEquals(
@@ -100,7 +100,7 @@ class CsvTest extends TestCase
         ];
 
         $expected = json_encode($expectedArray);
-        
+
         $this->assertEquals(
             $expected,
             $csv->json

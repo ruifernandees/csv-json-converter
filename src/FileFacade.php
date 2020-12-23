@@ -15,8 +15,8 @@ class FileFacade
      * @return string
      */
     public function convertCsvToJson(
-        string $pathToFile, 
-        int $csvKeysLine, 
+        string $pathToFile,
+        int $csvKeysLine,
         int $limitOfLines = -1,
         int $offset = 0
     ): string {
@@ -36,7 +36,7 @@ class FileFacade
         $fileAsString = file_get_contents($pathToFile);
         $jsonFile = json_decode($fileAsString, true);
         $json = new Json($jsonFile);
-        
+
         $json->toCsv();
 
         return $json->csv;

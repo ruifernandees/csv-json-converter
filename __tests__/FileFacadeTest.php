@@ -22,9 +22,9 @@ class FileFacadeTest extends TestCase
 
         $fileFacade = new FileFacade();
         $json = $fileFacade->convertCsvToJson(
-            $filePath, 
-            $lineOfCsvKeysOnTheFile, 
-            $limitOfLines, 
+            $filePath,
+            $lineOfCsvKeysOnTheFile,
+            $limitOfLines,
             $offset
         );
 
@@ -37,7 +37,7 @@ class FileFacadeTest extends TestCase
         ];
 
         $expected = json_encode($expectedArray);
-        
+
         $this->assertEquals(
             $expected,
             $json
@@ -52,10 +52,9 @@ class FileFacadeTest extends TestCase
         $filePath =  __DIR__ . '/files/users.json';
         $fileFacade = new FileFacade();
         $csv = $fileFacade->convertJsonToCsv($filePath);
-        
+
         $expected = "name,age,city\nRui,18,Maceió\nJosé,25,São Paulo";
 
         $this->assertEquals($expected, $csv);
-    
     }
 }
