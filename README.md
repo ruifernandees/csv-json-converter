@@ -195,6 +195,7 @@ fwrite($fileOpen, $csv);
 
 ## Credits
 - [Rui Fernandes](https://github.com/ruifernandees)
+- [All contributors](https://github.com/ruifernandees/csv-json-converter/graphs/contributors)
 
 ## License
 The MIT License (MIT). Please see [License File](https://github.com/ruifernandees/csv-json-converter/blob/main/LICENSE) for more information
