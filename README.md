@@ -5,6 +5,12 @@ You can see the README in:
 ## 📄 Description
 <p>CSV/JSON Converter is a modern PHP component which abstracts the CSV to JSON and JSON to CSV conversion routine.</p>
 
+## Install
+Using Composer
+```bash
+$ composer require ruifernandees/csv-json-converter
+```
+
 ## 💻 Usage
 ### CSV -> JSON
 <p>This example is in examples/csvToJson.php</p>

@@ -2,6 +2,12 @@
 ## 📄 Descrição
 <p>CSV/JSON Converter é um componente PHP moderno que abstrai a rotina de converter CSV para JSON e JSON para CSV.</p>
 
+## Instalar
+Usando o Composer
+```bash
+$ composer require ruifernandees/csv-json-converter
+```
+
 ## 💻 Uso
 ### CSV -> JSON
 <p>Este exemplo está em examples/csvToJson.php</p>
