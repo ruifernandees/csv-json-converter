@@ -193,6 +193,11 @@ $fileOpen = fopen($csvFile, "w");
 fwrite($fileOpen, $csv);
 ```
 
+## Run the tests
+```bash
+$ composer test
+```
+
 ## Credits
 - [Rui Fernandes](https://github.com/ruifernandees)
 - [All contributors](https://github.com/ruifernandees/csv-json-converter/graphs/contributors)
