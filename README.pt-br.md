@@ -195,6 +195,9 @@ fwrite($fileOpen, $csv);
 $ composer test
 ```
 
+## Contribuindo
+Para ver detalhes, acesse o arquivo [CONTRIBUTING](https://github.com/ruifernandees/csv-json-converter/blob/main/CONTRIBUTING.md).
+
 ## Créditos
 - [Rui Fernandes](https://github.com/ruifernandees)
 - [Todos os contribuidores](https://github.com/ruifernandees/csv-json-converter/graphs/contributors)
