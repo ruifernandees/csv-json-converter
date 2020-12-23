@@ -7,7 +7,7 @@ We accept contributions via Pull Requests on [Github](https://github.com/ruifern
 
 ## Pull Requests
 
-- **[PSR-12 Coding Standard](https://www.php-fig.org/psr/psr-12/)**
+- **[PSR-12 Coding Standard](https://www.php-fig.org/psr/psr-12/)** - The easiest way to apply the conventions is to use [PHP Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer).
 
 - **Add tests!** - Your patch won't be accepted if it doesn't have tests.
 
